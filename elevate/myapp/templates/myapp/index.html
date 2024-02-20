@@ -1,0 +1,17 @@
+<!-- crud_project/myapp/templates/myapp/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CRUD App - Index</title>
+</head>
+<body>
+    <h1>My Objects</h1>
+    <ul>
+        {% for obj in my_objects %}
+        <li>{{ obj.name }} - {{ obj.description }} <a href="{% url 'update' obj.pk %}">Edit</a> <a href="{% url 'delete' obj.pk %}">Delete</a></li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'create' %}">Add New</a>
+</body>
+</html>
